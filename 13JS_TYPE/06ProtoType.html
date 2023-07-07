@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //----------------------------------------
+        //Object객체 : 객체를 다루는 기본함수를 제공
+        //----------------------------------------
+
+        let obj = {name : '김경민', age:22}
+        console.log(obj);
+
+        console.log(Object.keys(obj));  //모든 키들을 배열로 가지고온다.
+        console.log(Object.values(obj));  //값을 배열형태로 뽑아온다.
+        console.log(Object.entries(obj));  //열거가능한 속성 [key,value] 형태의 배열로 변환(이차원배열)
+        let ob1 = {addr:'대구'}
+        let ob2 = {getder:'W'}
+        console.log(Object.assign(obj,ob1,ob2));    //obj에 ob1, ob2속성들을 복사
+
+        Object.freeze(obj); //객체 수정 불가
+        Object.seal(obj);   //새속성 추가 불가
+
+
+        //----------------------------------------
+        //Object.prototype : 객체가 상속을 구현하는데 사용되는 매커니즘, Object객체 내에 구성
+        //----------------------------------------
+        const ob = {name : '호랭이',color:'pink'}
+        console.log(ob);
+        console.log(Object.prototype)
+
+        function Person(name){  //생성자
+            this.name = name;
+        }
+
+        let person1 = new Person('경망고');
+        console.log(person1);
+        console.log(person1.toString());
+        console.log(person1.valueOf());
+
+        //Person 프로토타입에 기능 추가
+        Person.prototype.hello = function(){
+            console.log("안녕하세요. 저는"+this.name+"입니다.");
+        }
+
+        let person2 = new Person('홍학표');
+        console.log('person2',person2);
+        person2.hello();
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

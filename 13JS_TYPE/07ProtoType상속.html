@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //상위프로토타입
+    function Animal(name){
+        console.log("Animal 생성자가 호출되었다.");
+        this.name = name;
+    }
+    Animal.prototype.getName = function(){
+        console.log(`My name is ${this.name}`);
+    }
+
+    //하위프로토타입
+    function Dog(name, kind){
+        Animal.call(this,name);
+        console.log("Dog 생성자 호출!");
+        this.kind = kind;    
+    }
+
+    Dog.prototype = Object.create(Animal.prototype);    //프로토타입 상속 코드
+
+    const dog1 = new Dog('봄이','시골잡종');
+    console.log(dog1);
+
+</script>
+
+</body>
+</html>
