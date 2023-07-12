@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<li>LIST1</li>
+<li>LIST2</li>
+<li>LIST3</li>
+<li>LIST4</li>
+<li>LIST5</li>
+<li>LIST6</li>
+<li>LIST7</li>
+<li>LIST8</li>
+<li>LIST9</li>
+<li>LIST10</li>
+<li>LIST11</li>
+<li>LIST12</li>
+
+<body>
+    <script>
+        const liEls = document.querySelectorAll('li');
+        console.log(liEls);
+        liEls[5].after(liEls[4]);
+        liEls[5].before(liEls[0]);
+
+        //노드추가하기
+        const newEl = document.createElement('li');
+        newEl.innerHTML="비포!";
+        newEl.setAttribute('style','color : violet');
+        liEls[10].before(newEl);
+    </script>
+</body>
+
+</html>

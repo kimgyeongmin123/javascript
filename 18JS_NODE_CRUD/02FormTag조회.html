@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="frm03">
+        <input type="text">
+        <input type="text">
+    </form>
+    <form action="">
+        <input type="text">
+        <input type="text">
+    </form>
+    <form action="">
+        <input type="text">
+        <input type="text">
+    </form>
+
+    <script>
+        const formEls = document.forms;
+        console.log(formEls);
+        //idx
+        formEls[0].style.backgroundColor='pink';
+        formEls[0].firstChild.value='a';
+        console.log(formEls[0].childNodes);
+        formEls[0].childNodes[1].value='b';
+        // Array.from(formEls)
+
+        //이름부여해서 접근하는 방법
+        console.log(document.frm03);
+        document.frm03.style.backgroundColor='blue';
+        document.frm03.childNodes[1].value='aaa';
+        document.frm03.children[0].value='oaoa';
+        document.frm03.children[1].value='oaoa';
+    </script>
+
+</body>
+</html>

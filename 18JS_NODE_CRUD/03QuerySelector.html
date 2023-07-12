@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{margin : 5px;}
+        .btn{
+            width : 100px; height : 30px;
+            background-color: lightblue;
+            text-align: center;
+             line-height: 30px;
+            border-radius: 5px;
+            cursor:pointer;
+            transition: 0.5s;}
+        .btn--bg0{background-color:red;}
+        .btn--bg1{background-color:orange;}
+        .btn--bg2{background-color:yellow;}
+        .btn--bg3{background-color:green;}
+        .btn--bg4{background-color:blue;}
+        .btn--xl{font-size:1.2rem;}
+        .btn--speed01{transition: 0.5s;;}
+    </style>
+</head>
+<body>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+
+    <script>
+        const btnEls = document.querySelectorAll('.btn');
+        console.log(btnEls);
+        btnEls.forEach((btn,idx)=>{
+            btn.addEventListener('mouseover',function(){
+                // alert("클린 버블버블");
+                // console.log(btn,idx);
+                btn.classList.add('btn--bg'+idx);
+                btn.classList.add('btn--xl');
+                btn.classList.add('btn--speed01');
+            })
+            btn.addEventListener('mouseleave',function(){
+                btn.classList.remove('btn--bg'+idx);
+                btn.classList.remove('btn--xl');
+            })
+        })
+
+    </script>
+</body>
+</html>
